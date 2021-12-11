@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+  kubectl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ghcr.io/shoraiconsulting/kubectl:latest
