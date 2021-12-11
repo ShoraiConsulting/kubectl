@@ -35,10 +35,10 @@ jobs:
         run: docker-compose -f docker-compose.yml push kubectl
 
       - name: Tag build-versioned image
-        run: docker tag ghcr.io/shoraiconsulting/kubectl:${{ matrix.kubectl }} ghcr.io/shoraiconsulting/kubectl:${{ matrix.kubectl }}-${{ github.run_number }}
+        run: docker tag ghcr.io/shoraiconsulting/kubectl:latest ghcr.io/shoraiconsulting/kubectl:latest-${{ github.run_number }}
 
       - name: Push versioned image
-        run: docker push ghcr.io/shoraiconsulting/kubectl:${{ matrix.kubectl }}-${{ github.run_number }}
+        run: docker push ghcr.io/shoraiconsulting/kubectl:latest-${{ github.run_number }}
 
       # - name: Slack Notification
       #   uses: rtCamp/action-slack-notify@v2
